@@ -5,12 +5,13 @@ using UnityEngine;
 public class SpawnGhosts : MonoBehaviour
 {
     public GameObject ghost;
-    float nextTimeToSpawn = 10f;
+    float nextTimeToSpawn;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        nextTimeToSpawn = 2f;
+
+
     }
     private void InstantiateGhosts(GameObject ghost){
         Instantiate(ghost, gameObject.transform, false);

@@ -11,7 +11,9 @@ public class L1TimeEvents : MonoBehaviour
     private void Start()
     {
         
-        StartCoroutine(lightsout());
+        StartCoroutine(
+            lightsout());
+
     }
 
 
@@ -19,5 +21,8 @@ public class L1TimeEvents : MonoBehaviour
     {
         yield return new WaitForSeconds(60);
         lightout?.Invoke();
+
+
+
     }
 }
