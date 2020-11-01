@@ -19,6 +19,8 @@ public class ObjectSpawner : MonoBehaviour
         {
             GameObject obj = Instantiate(objectToSpawn, _placementIndicator.transform.position,
                 _placementIndicator.transform.rotation);
+            obj.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 }

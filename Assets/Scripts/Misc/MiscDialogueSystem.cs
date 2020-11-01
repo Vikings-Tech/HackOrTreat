@@ -9,6 +9,7 @@ public class MiscDialogueSystem : MonoBehaviour
     public Dialogue[] Dialogues;
     public Text dialogueText;
     public Text name;
+    public GameObject dialogueCanvas;
     void Start()
     {
         sentences = new Queue<string>();
@@ -41,7 +42,7 @@ public class MiscDialogueSystem : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        var routine = StartCoroutine(TypeSentence(sentence));
     }
 
 IEnumerator TypeSentence(string sentence)
@@ -56,6 +57,6 @@ foreach (char letter in sentence.ToCharArray())
 
     void EndDialogue()
     {
-        Debug.Log("End of convo");
+        dialogueCanvas.SetActive(false);
     }
 }

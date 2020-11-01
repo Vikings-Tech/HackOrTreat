@@ -16,6 +16,8 @@ public class L1Torch : MonoBehaviour
     public GameObject[] batteryStick;
     private bool lightOut;
     private L1TimeEvents _l1TimeEvents;
+    public Text torchDialog;
+    
     private void Start()
     {
         _battery = 600;
@@ -29,6 +31,13 @@ public class L1Torch : MonoBehaviour
         lightOut = true;
         camCoverCanvas.SetActive(true);
         torchOff();
+        torchDialog.text = "Looks like the light has gone out, try using your torch";
+        Invoke("clearText",3);
+    }
+
+    private void clearText()
+    {
+        torchDialog.text = "";
     }
     public void torchToggle()
     {
@@ -46,6 +55,8 @@ public class L1Torch : MonoBehaviour
     }
     public void torchOn()
     {
+        torchDialog.text = "Keep a note of the battery of your torch, you might run out of it";
+        Invoke("clearText",5);
         torch.sprite = torchSprites[1];
         _torchIsOn = true;
         if (_battery > 200)

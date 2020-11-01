@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class L1TimeEvents : MonoBehaviour
@@ -11,9 +10,7 @@ public class L1TimeEvents : MonoBehaviour
     private void Start()
     {
         
-        StartCoroutine(
-            lightsout());
-
+        StartCoroutine(lightsout());
     }
 
 
@@ -21,8 +18,5 @@ public class L1TimeEvents : MonoBehaviour
     {
         yield return new WaitForSeconds(60);
         lightout?.Invoke();
-
-
-
     }
 }
